@@ -58,7 +58,7 @@ The Movie Database Management System provides an interactive platform for explor
 
 ## Home Page
 
-![Home](docs/screenshots/home.png)
+![Home](docs/screenshots/homepage.png)
 
 ---
 
@@ -70,19 +70,20 @@ The Movie Database Management System provides an interactive platform for explor
 
 ## Filters & Sorting
 
-![Filters](docs/screenshots/filters.png)
+![Filters](docs/screenshots/filter.png)
 
 ---
 
 ## Movie Details
 
-![Movie Details](docs/screenshots/movie-details.png)
+![Movie Details](docs/screenshots/movie-details1.png)
+![Movie Details](docs/screenshots/movie-details2.png)
 
 ---
 
 ## Reviews
 
-![Reviews](docs/screenshots/reviews.png)
+![Reviews](docs/screenshots/review.png)
 
 ---
 
@@ -100,13 +101,13 @@ Movie-database-management-system
 │
 ├── docs/
 │   ├── screenshots/
-│   │   ├── home.png
-│   │   ├── search.png
-│   │   ├── filters.png
-│   │   ├── movie-details.png
-│   │   └── reviews.png
-│   │
-│   └── project-report.pdf
+│       ├── homepage.png
+│       ├── search.png
+│       ├── filter.png
+│       ├── movie-detail.png
+│       └── review.png
+│   
+│   
 │
 ├── server.js
 ├── db.js
