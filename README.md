@@ -1,44 +1,40 @@
-# 🎬 Movie Explorer
+# 🎬 Movie Database Management System
 
-A full-stack movie database web application that allows users to browse, search, filter, and review movies through a responsive interface backed by a MySQL database and RESTful API.
+A full-stack movie database web application that allows users to browse, search, filter, sort, and review movies. The application is powered by a MySQL relational database with an Express.js backend and a responsive HTML/CSS/JavaScript frontend.
 
 ---
 
-## 📌 Overview
+## 📌 Project Overview
 
-Movie Explorer is a full-stack web application developed using **Node.js, Express.js, MySQL, HTML, CSS, and JavaScript**. The application provides an interactive platform for exploring a movie database with advanced search, filtering, sorting, pagination, and user review functionality.
-
-The backend exposes REST APIs that communicate with a MySQL database, while the frontend delivers a modern and responsive user experience.
+The Movie Database Management System provides an interactive platform for exploring movie information stored in a relational database. It demonstrates database design, REST API development, backend integration, and frontend implementation while showcasing SQL queries, views, and CRUD operations.
 
 ---
 
 ## ✨ Features
 
-- 🔍 Search movies by title, actors, or genres
-- 🔤 Alphabetical filtering (A–Z)
+- 🔍 Search movies by title, actor, or genre
 - 🎭 Filter movies by genre
-- 📊 Sort by:
-  - Title
+- 🔤 Browse movies alphabetically
+- ⭐ Sort by
   - Rating
   - Release Year
   - Box Office Revenue
-- 📄 Pagination
-- 🎥 Dedicated movie details page
-- ⭐ User rating and review system
-- 🗄️ MySQL database integration
-- 🔗 RESTful API architecture
-- 📱 Responsive interface
+  - Title (A-Z / Z-A)
+- 📄 View detailed movie information
+- 🎬 Watch embedded trailers
+- 📝 Submit and view movie reviews
+- 📱 Responsive user interface
 - 🎨 Animated particle background
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
 ### Frontend
 
 - HTML5
 - CSS3
-- JavaScript
+- JavaScript (ES6)
 
 ### Backend
 
@@ -48,141 +44,148 @@ The backend exposes REST APIs that communicate with a MySQL database, while the 
 ### Database
 
 - MySQL
-- mysql2
 
-### Other
+### Tools
 
-- REST APIs
-- CORS
-- Express Static Files
+- MySQL Workbench
+- DBeaver
+- Git & GitHub
+- VS Code
 
 ---
 
-## 🗂 Project Structure
+# 📸 Application Preview
 
-```
-Movie-Explorer/
+## Home Page
 
+![Home](docs/screenshots/home.png)
+
+---
+
+## Search Movies
+
+![Search](docs/screenshots/search.png)
+
+---
+
+## Filters & Sorting
+
+![Filters](docs/screenshots/filters.png)
+
+---
+
+## Movie Details
+
+![Movie Details](docs/screenshots/movie-details.png)
+
+---
+
+## Reviews
+
+![Reviews](docs/screenshots/reviews.png)
+
+---
+
+## 🗂️ Project Structure
+
+```text
+Movie-database-management-system
 │
 ├── public/
 │   ├── index.html
 │   ├── movie-details.html
-│   ├── style.css
 │   ├── script.js
-│   └── movie-details-script.js
+│   ├── movie-details-script.js
+│   └── style.css
+│
+├── docs/
+│   ├── screenshots/
+│   │   ├── home.png
+│   │   ├── search.png
+│   │   ├── filters.png
+│   │   ├── movie-details.png
+│   │   └── reviews.png
+│   │
+│   └── project-report.pdf
 │
 ├── server.js
 ├── db.js
-├── movies.sql
 ├── package.json
 ├── package-lock.json
-└── README.md
+├── movie.sql
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## 🚀 API Endpoints
+# 🗄️ Database Design
 
-| Method | Endpoint | Description |
-|---------|----------|-------------|
-| GET | `/api/movies` | Retrieve movies with search, filtering, sorting, and pagination |
-| GET | `/api/movies/:id` | Retrieve movie details |
-| GET | `/api/movies/:id/reviews` | Retrieve movie reviews |
-| POST | `/api/reviews` | Submit a movie review |
+The project uses a normalized relational database consisting of multiple tables including:
 
----
-
-## 🔍 Search & Filtering
-
-The application supports:
-
-- Search by movie title
-- Search by actors
-- Search by genres
-- Alphabetical filtering
-- Genre filtering
-- Multiple sorting options
-- Pagination
-
----
-
-## ⭐ Review System
-
-Users can:
-
-- Submit ratings (1–5)
-- Add comments
-- View reviews
-- See reviews ordered by latest submissions
-
----
-
-## 🗄 Database
-
-The application uses a MySQL database containing movie information, including:
-
-- Movie details
-- Directors
+- Movies
 - Actors
+- Directors
 - Genres
-- Ratings
-- Box office revenue
-- Reviews
-- Trailers
-- Synopsis
+- MovieActors
+- MovieGenres
+- MovieReviews
+- MovieSummaryView
 
-A database view (`MovieSummaryView`) is used to efficiently retrieve aggregated movie information.
+The schema demonstrates:
+
+- One-to-Many relationships
+- Many-to-Many relationships
+- SQL Views
+- Joins
+- Foreign Keys
+- Aggregate Queries
 
 ---
 
-## ⚙ Installation
+# ⚙️ Installation
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/yourusername/movie-explorer.git
-```
-
-### 2. Navigate to the project
+### Clone the repository
 
 ```bash
-cd movie-explorer
+git clone https://github.com/muqadasilyas/Movie-database-management-system.git
 ```
 
-### 3. Install dependencies
+### Navigate to the project
+
+```bash
+cd Movie-database-management-system
+```
+
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Configure MySQL
+### Import the database
 
-Create a MySQL database and import:
+Import the provided **movie.sql** file into MySQL.
 
-```
-movies.sql
-```
+### Configure the database
 
-Update your database credentials inside:
+Create a `.env` file:
 
-```
-db.js
-```
-
-```javascript
-host: "localhost",
-user: "your_username",
-password: "your_password",
-database: "moviesystemdb"
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_NAME=moviesystemdb
 ```
 
-### 5. Start the server
+### Start the server
 
 ```bash
 node server.js
 ```
 
-The application will run at:
+Open
 
 ```
 http://localhost:3001
@@ -190,76 +193,52 @@ http://localhost:3001
 
 ---
 
-## 📸 Screenshots
+# 📄 API Endpoints
 
-Add screenshots here.
-
-### Home Page
-
-```
-images/home.png
-```
-
-### Movie Details
-
-```
-images/details.png
-```
-
-### Search & Filtering
-
-```
-images/search.png
-```
-
-### Reviews
-
-```
-images/reviews.png
-```
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/movies` | Retrieve all movies |
+| GET | `/api/movies/:id` | Retrieve movie details |
+| GET | `/api/movies/:id/reviews` | Retrieve movie reviews |
+| POST | `/api/reviews` | Submit a movie review |
 
 ---
 
-## 🎯 Learning Outcomes
+# 📑 Project Documentation
 
-This project demonstrates practical experience with:
+The complete project report including:
 
-- Full-Stack Web Development
-- RESTful API Design
-- Express.js
-- Node.js
-- MySQL Database Design
+- Database Design
 - SQL Queries
-- Database Views
-- Client-Server Architecture
-- CRUD Operations
-- Search & Filtering
-- Pagination
-- Responsive Web Design
+- ER Diagram
+- API Design
+- Implementation
+- Testing
+- Conclusion
+
+is available here:
+
+📄 **[Project Report](docs/project-report.pdf)**
 
 ---
 
-## 🚀 Future Improvements
+# 🚀 Future Improvements
 
-- User authentication
-- Favorite movies
-- Watchlist
-- Admin dashboard
-- JWT authentication
-- Movie recommendations
-- AI-powered movie suggestions
-- Dark/Light mode
-- Deployment on Render or Railway
+- User Authentication
+- Admin Dashboard
+- Favorites & Watchlist
+- Recommendation System
+- JWT Authentication
+- Docker Deployment
+- Cloud Database Hosting
 
 ---
 
-## 👤 Author
+# 👩‍💻 Author
 
 **Muqadas Ilyas**
 
 Software Engineering Student
-
-**Interests:** Artificial Intelligence • Full-Stack Development • Software Engineering • Systems Programming
 
 GitHub: https://github.com/muqadasilyas
 
@@ -267,4 +246,6 @@ LinkedIn: https://linkedin.com/in/muqadas-ilyas-8681923b5
 
 ---
 
-⭐ If you found this project useful, consider giving it a star.
+## ⭐ Support
+
+If you found this project useful, consider giving it a **Star ⭐**.
