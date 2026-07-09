@@ -76,8 +76,8 @@ The Movie Database Management System provides an interactive platform for explor
 
 ## Movie Details
 
-![Movie Details](docs/screenshots/movie-details1.png)
-![Movie Details](docs/screenshots/movie-details2.png)
+![Movie Details](docs/screenshots/movie-detail1.png)
+![Movie Details](docs/screenshots/movie-detail2.png)
 
 ---
 
@@ -203,23 +203,6 @@ http://localhost:3001
 | GET | `/api/movies/:id/reviews` | Retrieve movie reviews |
 | POST | `/api/reviews` | Submit a movie review |
 
----
-
-# 📑 Project Documentation
-
-The complete project report including:
-
-- Database Design
-- SQL Queries
-- ER Diagram
-- API Design
-- Implementation
-- Testing
-- Conclusion
-
-is available here:
-
-📄 **[Project Report](docs/project-report.pdf)**
 
 ---
 
