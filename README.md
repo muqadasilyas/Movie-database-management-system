@@ -76,8 +76,8 @@ The Movie Database Management System provides an interactive platform for explor
 
 ## Movie Details
 
-![Movie Details](docs/screenshots/movie-detail1.png)
-![Movie Details](docs/screenshots/movie-detail2.png)
+![Movie Details](docs/screenshots/moviedetail1.png)
+![Movie Details](docs/screenshots/moviedetail2.png)
 
 ---
 
